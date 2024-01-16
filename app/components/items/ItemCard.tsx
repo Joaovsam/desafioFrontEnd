@@ -20,6 +20,8 @@ const ItemCard: React.FC<IItemCardProps> = ({
     )
   })
 
+  const price = data.price_in_cents/100
+
   return (
     <div 
        onClick={handleNavigate}
@@ -60,7 +62,7 @@ const ItemCard: React.FC<IItemCardProps> = ({
         </div>
         <div className="flex flex-row items-center gap-1">
          <div className="font-semibold">
-           R${data.price}
+           R${price}
          </div>
         </div>
       </div>
