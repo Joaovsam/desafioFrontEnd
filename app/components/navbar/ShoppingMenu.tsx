@@ -6,7 +6,6 @@ import React,{useState,useCallback} from "react";
 import {AiOutlineShoppingCart} from 'react-icons/ai';
 import { useRouter } from "next/navigation";
 
-//TODO MUDAR USUARIO
 
 const ShoppingMenu = ({
 }) =>{

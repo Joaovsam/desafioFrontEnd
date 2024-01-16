@@ -1,8 +1,7 @@
-import React, {useCallback} from 'react'
+import React from 'react'
 
 
 import Button from '../Button';
-import { AiFillStar } from 'react-icons/ai';
 
 import {
   FieldValues,

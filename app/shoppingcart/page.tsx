@@ -1,5 +1,5 @@
 "use client"
-import React,{useState} from "react";
+import React from "react";
 
 import EmptyState from "@/app/components/EmptyState";
 import CheckoutClient from "./CheckoutClient";
@@ -9,8 +9,7 @@ import CheckoutClient from "./CheckoutClient";
 const Checkout = () =>{
     
     let item =    { name: 'Caneca de cerâmica rústica', description: "Qualquer coisa pra testar", image_url: 'https://storage.googleapis.com/xesque-dev/challenge-images/caneca-06.jpg', category: 'mugs' , price: "12,75"}
-    // const {state} = useLocation() 
-    // let item
+    
   
   if (!item) {
     return (      
