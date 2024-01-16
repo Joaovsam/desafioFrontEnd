@@ -5,7 +5,17 @@ import React from 'react';
 import Avatar from '../Avatar';
 import Button from '../Button';
 
+type Item = {
+  name: string,
+  description: string, 
+  image_url: string, 
+  category: string ,
+  price: string,
+}
+
+
 interface iItemInfoProps {
+  item: Item;
   description: string;
   image_url: string;
   category: string;
@@ -15,6 +25,7 @@ interface iItemInfoProps {
 const MINIO_PATH = process.env.REACT_APP_MINIO_URL
 
 const ItemInfo: React.FC<iItemInfoProps> = ({
+  item,
   description,
   category,
   name,
@@ -22,6 +33,15 @@ const ItemInfo: React.FC<iItemInfoProps> = ({
   price,
 }) => {
 
+
+  const handleAddToShoppingCart = () => {
+    let itemsArray = JSON.parse(localStorage.getItem('shoppingCart') || '[]');
+
+    let novoItem = item;
+    itemsArray.push(novoItem);
+      
+    localStorage.setItem('shoppingCart', JSON.stringify(itemsArray));
+  }
  
   return ( 
     <div className="col-span-8 flex flex-col gap-8">
@@ -82,7 +102,7 @@ const ItemInfo: React.FC<iItemInfoProps> = ({
               </div>
               <Button
                 label='Adicionar ao carrinho'
-                onClick={()=>{}}
+                onClick={handleAddToShoppingCart}
               />
             </div>
 

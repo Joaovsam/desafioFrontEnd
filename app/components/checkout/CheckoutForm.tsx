@@ -9,26 +9,20 @@ import {
   useForm
 } from 'react-hook-form';
 import Input from '../inputs/Input';
+import { useRouter } from 'next/navigation';
 
 interface CheckoutFormProps {
-  min_price?: number;
-  max_price?: number;
-  land_distance?: number;
-  team?: number;
-  review_note?: number;
-  identifier?: string;
-  coments_number?: number;
-  disabled?: boolean;
-  phone?: string
+  precoTotal: number;
+  
 }
 
 const CheckoutForm: React.FC<
   CheckoutFormProps
 > = ({  
-  disabled, 
+  precoTotal, 
 }) => {
 
-
+  const route = useRouter();
 
   const {
       register,
@@ -47,6 +41,12 @@ const CheckoutForm: React.FC<
       }
   });
 
+
+
+  const handleCheckout = () => {
+    localStorage.clear();
+    route.push("/")
+  }
 
   return ( 
     <div 
@@ -104,20 +104,19 @@ const CheckoutForm: React.FC<
         "
       >
         <div>
-          valor
+          valor total
         </div>
         
           <div>
-            R$10,60
+            R${precoTotal}
           </div>
              
       </div>
       
       <div className="p-2">
         <Button 
-          disabled={disabled} 
           label="Finalizar Pedido" 
-          onClick={()=>{}}
+          onClick={handleCheckout}
         />
       </div>
       

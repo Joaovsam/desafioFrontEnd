@@ -27,17 +27,7 @@ interface itemClientProps {
 const ItemClient: React.FC<itemClientProps> = ({
   item,
 }) => {
- 
   
-  console.log(item)
-
-
-
-
-  const [isLoading, setIsLoading] = useState(false);
-
-
-
   return (    
     <Container>
       <div 
@@ -57,6 +47,7 @@ const ItemClient: React.FC<itemClientProps> = ({
             "
           >
             <ItemInfo
+              item = {item}
               description={item.description}
               category={item.category}
               image_url={item.image_url}
