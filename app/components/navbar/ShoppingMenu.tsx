@@ -8,20 +8,19 @@ import { useRouter } from "next/navigation";
 
 //TODO MUDAR USUARIO
 
-const UserMenu = ({
+const ShoppingMenu = ({
 }) =>{
 
 
     const route = useRouter();
 
  
-   
     
     return(
         <div className="relative">
             <div className="flex flex-row items-center gap-3">
                 <div
-                    onClick={()=>{}}
+                    onClick={()=>{route.push('/shoppingcart')}}
                     className="
                         p-4
                         md:py-1
@@ -45,4 +44,4 @@ const UserMenu = ({
     )
 }
 
-export default UserMenu
+export default ShoppingMenu

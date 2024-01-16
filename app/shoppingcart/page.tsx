@@ -2,12 +2,11 @@
 import React,{useState} from "react";
 
 import EmptyState from "@/app/components/EmptyState";
-import Container from "@/app/components/Container";
-import ItemClient from "./ItemClient";
+import CheckoutClient from "./CheckoutClient";
 
 
 
-const Item = () =>{
+const Checkout = () =>{
     
     let item =    { name: 'Caneca de cerâmica rústica', description: "Qualquer coisa pra testar", image_url: 'https://storage.googleapis.com/xesque-dev/challenge-images/caneca-06.jpg', category: 'mugs' , price: "12,75"}
     // const {state} = useLocation() 
@@ -25,11 +24,10 @@ const Item = () =>{
 
   return (
     <>
-      <ItemClient
-        item={item}
+      <CheckoutClient
       />
     </>
   );
 }
 
-export default Item
+export default Checkout

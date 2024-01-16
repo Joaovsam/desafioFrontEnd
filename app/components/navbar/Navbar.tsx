@@ -4,11 +4,17 @@ import React from "react";
 import Container from "../Container";
 import Logo from "./Logo";
 import Search from "./Search";
-import UserMenu from "./UserMenu";
+import ShoppingMenu from "./ShoppingMenu";
 import Categories from "./Categories";
 
+import { usePathname } from "next/navigation";
+
 const Navbar = () =>{
-         
+    
+
+    const pathname = usePathname();
+    const isMainPage = pathname === '/';
+
 
 
     return(
@@ -31,8 +37,8 @@ const Navbar = () =>{
                         "
                     >
                         <Logo />
-                        <Search/>
-                        <UserMenu/>
+                        {isMainPage && <Search/>}                        
+                        <ShoppingMenu/>
                     </div>
                 </Container>                
             </div>

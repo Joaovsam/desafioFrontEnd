@@ -64,14 +64,6 @@ const ItemClient: React.FC<itemClientProps> = ({
               name={item.name}    
               price={item.price}         
             />
-            <div 
-              className="
-                mb-10 
-                md:order-last 
-                md:col-span-3
-              "
-            >
-            </div>
           </div>        
         </div>
       </div>

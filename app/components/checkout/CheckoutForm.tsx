@@ -11,7 +11,7 @@ import {
 } from 'react-hook-form';
 import Input from '../inputs/Input';
 
-interface PortifolioContactProps {
+interface CheckoutFormProps {
   min_price?: number;
   max_price?: number;
   land_distance?: number;
@@ -23,18 +23,10 @@ interface PortifolioContactProps {
   phone?: string
 }
 
-const PortifolioContact: React.FC<
-  PortifolioContactProps
-> = ({
-  min_price,
-  max_price,
-  land_distance,
-  team,
-  identifier,
-  review_note,
-  coments_number,
+const CheckoutForm: React.FC<
+  CheckoutFormProps
+> = ({  
   disabled, 
-  phone 
 }) => {
 
 
@@ -49,8 +41,8 @@ const PortifolioContact: React.FC<
   } = useForm<FieldValues>({
       defaultValues:{
           name: "",
-          date: "",
-          hour: "",
+          cpf: "",
+          credCardNumber: "",
           city: "",
           time: 0,
       }
@@ -60,7 +52,8 @@ const PortifolioContact: React.FC<
   return ( 
     <div 
       className="
-        p-3
+        p-3 
+        w-1/2
         bg-white 
         rounded-xl 
         border-[1px]
@@ -68,62 +61,26 @@ const PortifolioContact: React.FC<
         overflow-hidden
       "
     > 
-      <div className="flex flex-col gap-1 p-2">
-        <div className="
-          flex flex-row items-center gap-1">
-          <div className="text-2xl font-semibold">
-            {identifier}
-          </div>
-        </div>
-        <div className="flex flex-row gap-1 items-center">
-          {review_note && (<div className='flex flex-row items-center gap-1 font-bold '>
-            <AiFillStar/> {review_note}
-          </div>)}
-          {coments_number &&(
-            <div className="px-2 font-semibold text-sm text-neutral-400">
-              {coments_number} coments
-            </div>
-          )}
-        </div>
-      </div>
       <div className='flex flex-col'>
         <Input 
           errors={errors}
           id='name'
-          label='Nome do evento'
+          label='Nome completo*'
           register={register}
+          required
         />
-        <div className='flex flex-row'>
-            <Input
-               errors={errors}
-               id='date'
-               label='Data do evento*'
-               register={register}
-               type='date'
-               required
-            />
-            <Input
-               errors={errors}
-               id='hour'
-               label='Horario*'
-               register={register}
-               type = 'time'
-               required
-            />
-        </div>
         <Input
           errors={errors}
-          id='city'
-          label='Cidade do evento*'
+          id='cpf'
+          label='CPF*'
           register={register}
           required
         />
         <Input
            errors={errors}
-           id='time'
-           label='Tempo de duração (em minutos)*'
+           id='credCardNumber'
+           label='Número do cartão de crédito*'
            register={register}      
-           type='number'  
            required    
         />        
       </div>
@@ -148,68 +105,19 @@ const PortifolioContact: React.FC<
         "
       >
         <div>
-          Cachê
-        </div>
-        {min_price?
-          <div className='flex flex-row'>
-            R${min_price} a R${max_price}
-          </div>
-          :
-          <div>
-            R${max_price}
-          </div>
-        }        
-      </div>
-      <div 
-        className="
-          p-2
-          flex 
-          flex-row 
-          items-center 
-          justify-between
-          font-semibold
-          text-md
-        "
-      >
-        <div>
-          Transporte (Terrestre)
-        </div>
-        <div>
-          {land_distance} Km
-        </div>      
-      </div>
-      <div 
-        className="
-          p-2 
-          flex 
-          flex-row 
-          items-center 
-          justify-between
-          font-semibold
-          text-md
-        "
-      >
-        <div>
-          Equipe
-        </div>
-        <div>
-          {team}
+          valor
         </div>
         
+          <div>
+            R$10,60
+          </div>
+             
       </div>
-      <div className="
-          py-2
-          items-center
-          text-sm
-          text-center	
-          text-neutral-400
-        ">
-          Informações Prévias Estimadas
-      </div>  
+      
       <div className="p-2">
         <Button 
           disabled={disabled} 
-          label="Pedir Orçamento" 
+          label="Finalizar Pedido" 
           onClick={()=>{}}
         />
       </div>
@@ -218,4 +126,4 @@ const PortifolioContact: React.FC<
    );
 }
  
-export default PortifolioContact;
+export default CheckoutForm;
