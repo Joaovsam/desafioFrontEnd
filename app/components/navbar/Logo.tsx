@@ -16,7 +16,7 @@ const Logo = () =>{
         className=" md:block cursor-pointer"
         height={150}
         width={150}
-        src="/images/logo.teste.png"       
+        src="/vercel.svg"       
         />
     )
 }

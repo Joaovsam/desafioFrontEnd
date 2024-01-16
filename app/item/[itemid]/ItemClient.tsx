@@ -61,7 +61,8 @@ const ItemClient: React.FC<itemClientProps> = ({
               description={item.description}
               category={item.category}
               image_url={item.image_url}
-              name={item.name}             
+              name={item.name}    
+              price={item.price}         
             />
             <div 
               className="
@@ -71,10 +72,7 @@ const ItemClient: React.FC<itemClientProps> = ({
               "
             >
             </div>
-          </div>
-          
-          
-
+          </div>        
         </div>
       </div>
     </Container>

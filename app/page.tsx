@@ -41,7 +41,7 @@ const Home = () =>{
         <Container>
           <div 
             className="
-              pt-44
+              pt-10
               grid 
               grid-cols-1 
               sm:grid-cols-2 
