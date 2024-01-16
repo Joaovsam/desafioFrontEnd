@@ -5,7 +5,6 @@ import Container from "../Container";
 import Logo from "./Logo";
 import Search from "./Search";
 import ShoppingMenu from "./ShoppingMenu";
-import Categories from "./Categories";
 
 import { usePathname } from "next/navigation";
 
@@ -42,7 +41,6 @@ const Navbar = () =>{
                     </div>
                 </Container>                
             </div>
-            <Categories /> 
         </div>
     )
 }
