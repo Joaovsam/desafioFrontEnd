@@ -10,7 +10,7 @@ interface EmptyStateProps {
 }
 
 const EmptyState: React.FC<EmptyStateProps> = ({
-  title = "Não foram encontrados artistas com essas especificações",
+  title = "Não foram encontrados itens com essas especificações",
   subtitle = "Tente mudar ou retirar os filtros.",
   showReset
 }) => {

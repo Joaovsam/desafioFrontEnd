@@ -8,7 +8,9 @@ import UserMenu from "./UserMenu";
 import Categories from "./Categories";
 
 const Navbar = () =>{
-     
+         
+
+
     return(
         <div className="fixed w-full bg-white z-10 shadow-s,">
             <div

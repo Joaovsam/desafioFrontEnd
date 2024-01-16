@@ -1,6 +1,6 @@
 import React from "react";
 
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 
 
 interface IItemCardProps {
@@ -14,28 +14,10 @@ const ItemCard: React.FC<IItemCardProps> = ({
   data,
 }) => {
   const router = useRouter();
-  let message = getMessage()
-
-
-  function getMessage(){
-    let message = ""
-    data.music_style.forEach((e:any,index:any)=>{
-      if(index>=2){
-        message+= "..."
-        return
-      } 
-      if(index == 1) message += ","
-      message += e.genero
-      
-    })
-    return message;
-  }
    
   const handleNavigate = (()=>{
-    router.push({
-      pathname: `${data.identifier}`,
-      query: { state: data },
-    })
+    router.push(    `item/${data.name}`  
+    )
   })
 
   return (
@@ -62,7 +44,8 @@ const ItemCard: React.FC<IItemCardProps> = ({
               group-hover:scale-110 
               transition
             "
-            src={path + data.profile_pic}
+            src={
+              data.image_url}
             alt="Item"
           />
           <div className="

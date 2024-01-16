@@ -25,11 +25,11 @@ const Categories = () =>{
                 flex
                 flex-row
                 items-center
-                justify-between
                 overflow-x-auto
             "
             >
-                
+                <div>Canecas</div>
+                <div>Camisas</div>
             </div>    
         </Container>
     )
